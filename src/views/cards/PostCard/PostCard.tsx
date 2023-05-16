@@ -26,7 +26,7 @@ const PostCard: React.FC<Props> = ({
         <p className="post-author">Por {author}</p>
         <p className="post-description">{description}</p>
       </div>
-      <IconButton label="Postular" onClick={onCLickButton} icon={<Golf />} />
+      <IconButton  label="Postular" onClick={onCLickButton} icon={<Golf />} />
     </div>
   );
 };

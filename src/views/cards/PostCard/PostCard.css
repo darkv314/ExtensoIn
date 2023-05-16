@@ -4,6 +4,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  justify-content: space-around;
 }
 
 .post-image {
@@ -20,6 +21,11 @@
 .post-title {
   margin: 0 0 8px 0;
   font-size: 24px;
+  /* max lines 1 */
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
 }
 
 .post-author {
@@ -39,4 +45,11 @@
   /* customize scroll */
   scrollbar-width: thin;
   scrollbar-color: #0073b1 #fff;
+}
+
+.post-card__icon-button{
+  /* always at right of div*/
+  margin-left: auto;
+  margin-right: 0;
+  height: 100%;
 }

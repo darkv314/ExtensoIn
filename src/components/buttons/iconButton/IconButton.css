@@ -8,6 +8,7 @@ button {
     padding: 0.5rem 1rem;
     transition: all 0.2s ease-in-out;
     background-color: #f6f4f4;
+    max-width: 6em;
 }
 
 button:hover {

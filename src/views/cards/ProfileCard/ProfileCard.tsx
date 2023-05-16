@@ -16,7 +16,6 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 }) => {
   return (
     <div className="card">
-      <h2>Perfil</h2>
       <img src={imageSrc} alt={imageAlt} className="avatar" />
       <div className="card-content">
         <p className="card-name">{name}</p>

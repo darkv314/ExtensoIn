@@ -57,6 +57,31 @@
     background-color: rgb(151, 151, 151);
 }
 
+.profesional-info {
+    display: grid;
+    gap: 1rem;
+    padding: 2.5rem 4rem 0 4rem;
+}
+
+.back-button {
+    position: absolute;
+    width: 2.5rem;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.profesional-info input {
+    min-height: 100px;
+    min-width: 2rem;
+}
+textarea {
+    font-family: inherit;
+    border-radius: 3px;
+    min-height: 4rem;
+    min-width: 6rem;
+}
+
 /* .profile-banner {
     background-color: grey;
     min-height: 8rem;

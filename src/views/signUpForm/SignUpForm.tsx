@@ -10,12 +10,15 @@ import MainButton from "../../components/buttons/MainButton";
 // import { IconoirProvider, ProfileCircle } from "iconoir-react";
 import Avvvatars from "avvvatars-react";
 import { faker } from "@faker-js/faker";
+import { IconoirProvider, ArrowLeft } from "iconoir-react";
+import { motion } from "framer-motion";
 
 import {
     errMsgRequired,
     errMsgEmail,
     EMAIL_CHECK,
 } from "../../helpers/helpers";
+import { useState } from "react";
 // import { useState } from "react";
 
 type FormValues = {
@@ -34,24 +37,40 @@ function SignUpForm() {
             apellido: "",
         },
     });
-
-    const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
+    const form = [<PersonalInfo key={0} />, <ProfesionalInfo key={1} />];
+    const [formState, setFormState] = useState(0);
+    const onSubmit: SubmitHandler<FormValues> = (data) => {
+        formState === 0 ? setFormState(1) : console.log(data);
+    };
 
     return (
         <>
             <h1>Regístrate</h1>
             <div className="sign-up-form">
                 <FormProvider {...methods}>
+                    {formState === 1 ? (
+                        <motion.button
+                            className="back-button"
+                            type="button"
+                            onClick={() => setFormState(0)}
+                        >
+                            <IconoirProvider>
+                                <ArrowLeft width={15} height={15} />
+                            </IconoirProvider>
+                        </motion.button>
+                    ) : null}
+
                     <form onSubmit={methods.handleSubmit(onSubmit)}>
-                        <PersonalInfo />
+                        {form[formState]}
                         <div className="change-button">
                             <MainButton
-                                type="submit"
+                                type="button"
                                 backgroundColor={"blue"}
                                 color="white"
                                 border="none"
+                                onClick={methods.handleSubmit(onSubmit)}
                             >
-                                Registrarse
+                                {formState === 0 ? "Siguiente" : "Registrarse"}
                             </MainButton>
                         </div>
                     </form>
@@ -146,6 +165,29 @@ function PersonalInfo() {
                     }}
                 />
             </div>
+        </div>
+    );
+}
+
+function ProfesionalInfo() {
+    const { register } = useFormContext();
+    return (
+        <div className="profesional-info">
+            <label htmlFor="descripcion">Descripción</label>
+            <textarea
+                id="descripcion"
+                {...register("descripcion", {
+                    required: errMsgRequired,
+                })}
+            ></textarea>
+
+            <label htmlFor="habilidades">Habilidades</label>
+            <textarea
+                id="habilidades"
+                {...register("descripcion", {
+                    required: errMsgRequired,
+                })}
+            ></textarea>
         </div>
     );
 }

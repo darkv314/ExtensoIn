@@ -24,7 +24,7 @@ function SignInForm() {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit(onSubmit)}>
                     <h1>Bienvenid@</h1>
-                    <div className="input-container">
+                    <div className="sign-in-container">
                         <Input
                             id="email"
                             label="Email"
@@ -46,6 +46,7 @@ function SignInForm() {
                             }}
                         />
                     </div>
+
                     <MainButton
                         type="submit"
                         backgroundColor={"blue"}

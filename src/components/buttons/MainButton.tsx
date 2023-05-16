@@ -1,5 +1,10 @@
 import "./MainButton.css";
 
-export default function MainButton(txtButton: string = "Button") {
+type MainButtonProps = {
+    txtButton: string;
+}
+
+export default function MainButton({ txtButton }: MainButtonProps) {
   return <button className="main__button">{txtButton}</button>;
+  
 }

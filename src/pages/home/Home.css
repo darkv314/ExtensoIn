@@ -31,14 +31,6 @@
   align-items: center;
   text-shadow: 0 0 2px whitesmoke;
   font-weight: bold;
-
-  background: linear-gradient(
-    170deg,
-    transparent,
-    transparent 40%,
-    var(--secondary) 75%,
-    var(--secondaryAccent) 100%
-  );
 }
 
 .second__section__content {
@@ -60,7 +52,18 @@
   padding: 3em;
 }
 
-.third__section{
-    display: flex;
-    flex-direction: row;
+.third__section {
+  text-shadow: 0 0 2px whitesmoke;
+
+  display: flex;
+  flex-direction: row;
+}
+.background {
+  background: linear-gradient(
+    145deg,
+    transparent,
+    transparent 50%,
+    var(--secondary) 75%,
+    var(--secondaryAccent) 100%
+  );
 }

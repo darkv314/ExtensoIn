@@ -1,12 +1,18 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-  --primary: #FFFCEA;
-  --primaryAccent: #A5F2E7;
-  --secondary: #8983F3;
-  --secondaryAccent: #3A0077;
-
-  --textColor: #666666;
+#root {
+    min-height: 100svh;
+    display: flex;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    --primary: #fffcea;
+    --primaryAccent: #a5f2e7;
+    --secondary: #8983f3;
+    --secondaryAccent: #3a0077;
+    --textColor: #666666;
 }

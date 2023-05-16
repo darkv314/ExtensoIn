@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { IconoirProvider, EyeEmpty, EyeOff } from "iconoir-react";
 import ErrMsg from "../errors/ErrMsg";
+import "./Input.css";
 
 type MainInputProps = {
     id: string;

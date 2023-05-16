@@ -1,22 +1,15 @@
 import React from "react";
 import "./MainButton.css";
 
-type MainButton = {
-  type?: "button" | "submit" | "reset" | undefined;
-  onClick?: () => void;
-  children?: React.ReactNode;
-  rest?: any;
-};
+interface Props {
+  onClick: () => void;
+  text: string;
+}
 
-const MainButton = ({
-  type = "button",
-  onClick = () => {},
-  children = "Click Me",
-  ...rest
-}: MainButton) => {
+const MainButton: React.FC<Props> = ({ onClick, text }) => {
   return (
-    <button type={type} onClick={onClick} {...rest}>
-      {children}
+    <button className="button" onClick={onClick}>
+      {text}
     </button>
   );
 };

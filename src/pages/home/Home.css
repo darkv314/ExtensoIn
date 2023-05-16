@@ -59,3 +59,8 @@
   text-align: center;
   padding: 3em;
 }
+
+.third__section{
+    display: flex;
+    flex-direction: row;
+}

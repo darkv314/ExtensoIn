@@ -2,6 +2,7 @@ import Description from "../../components/text/description/Description";
 import Title from "../../components/text/tittle/Title";
 import "./Home.css";
 import banner from "../../assets/banner-1.jpg";
+import MainButton from "../../components/buttons/MainButton";
 
 function Home() {
   return (
@@ -42,6 +43,18 @@ function Home() {
               entrevista.
             </p>
           </div>
+        </div>
+      </section>
+      <section className="third__section">
+        <div className="div__left">
+          <Title text="Publica un trabajo" />
+          <Description
+            title="¿Buscas empleados?"
+            content="Publica un trabajo y encuentra a la persona ideal para tu empresa. InExperto te permite encontrar a personas con habilidades y conocimientos que se ajusten a tus necesidades. ¡Publica un trabajo y encuentra a tu próximo empleado!"
+          />
+        </div>
+        <div className="div__right">
+          <MainButton onClick={() => {}} text="PUBLICAR TRABAJO" />
         </div>
       </section>
     </>

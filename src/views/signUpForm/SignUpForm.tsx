@@ -2,6 +2,7 @@ import { FormProvider, useForm, SubmitHandler } from "react-hook-form";
 import Input from "../../components/inputs/Input";
 import "./SignUpForm.css";
 import MainButton from "../../components/buttons/MainButton";
+import { IconoirProvider, ProfileCircle } from "iconoir-react";
 
 import {
     errMsgRequired,
@@ -24,72 +25,90 @@ function SignUpForm() {
     const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
 
     return (
-        <div className="sign-up-form">
-            <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(onSubmit)}>
-                    <h1>Regístrate</h1>
-                    <PersonalInfo />
-                    <MainButton
-                        type="submit"
-                        backgroundColor={"blue"}
-                        color="white"
-                        border="none"
-                    >
-                        Iniciar sesión
-                    </MainButton>
-                </form>
-            </FormProvider>
-        </div>
+        <>
+            <h1>Regístrate</h1>
+            <div className="sign-up-form">
+                <FormProvider {...methods}>
+                    <form onSubmit={methods.handleSubmit(onSubmit)}>
+                        <PersonalInfo />
+                        <div className="change-button">
+                            <MainButton
+                                type="submit"
+                                backgroundColor={"blue"}
+                                color="white"
+                                border="none"
+                            >
+                                Registrarse
+                            </MainButton>
+                        </div>
+                    </form>
+                </FormProvider>
+            </div>
+        </>
     );
 }
 
 function PersonalInfo() {
     return (
         <div className="personal-info">
-            <Input
-                id="nombre"
-                label="Nombre"
-                type="text"
-                validations={{
-                    required: errMsgRequired,
-                }}
-            />
-            <Input
-                id="apellido"
-                label="Apellido"
-                type="text"
-                validations={{
-                    required: errMsgRequired,
-                }}
-            />
-            <Input
-                id="email"
-                label="Email"
-                type="text"
-                validations={{
-                    required: errMsgRequired,
-                    pattern: {
-                        value: EMAIL_CHECK,
-                        message: errMsgEmail,
-                    },
-                }}
-            />
-            <Input
-                id="contrasena"
-                label="Contraseña"
-                type="text"
-                validations={{
-                    required: errMsgRequired,
-                }}
-            />
-            <Input
-                id="fechaNacimiento"
-                label="Fecha de nacimiento"
-                type="text"
-                validations={{
-                    required: errMsgRequired,
-                }}
-            />
+            <div className="profile-pictures">
+                <div className="profile-banner"></div>
+                <div className="profile-picture">
+                    <IconoirProvider>
+                        <ProfileCircle
+                            width={"20 em"}
+                            height={"20 em"}
+                            strokeWidth={0.75}
+                        />
+                    </IconoirProvider>
+                </div>
+            </div>
+            <div className="input-container">
+                <Input
+                    id="nombre"
+                    label="Nombre"
+                    type="text"
+                    validations={{
+                        required: errMsgRequired,
+                    }}
+                />
+                <Input
+                    id="apellido"
+                    label="Apellido"
+                    type="text"
+                    validations={{
+                        required: errMsgRequired,
+                    }}
+                />
+                <Input
+                    id="email"
+                    label="Email"
+                    type="text"
+                    validations={{
+                        required: errMsgRequired,
+                        pattern: {
+                            value: EMAIL_CHECK,
+                            message: errMsgEmail,
+                        },
+                    }}
+                />
+                <Input
+                    id="contrasena"
+                    label="Contraseña"
+                    type="password"
+                    validations={{
+                        required: errMsgRequired,
+                    }}
+                />
+                <Input
+                    id="fechaNacimiento"
+                    label="Fecha de nacimiento"
+                    type="text"
+                    validations={{
+                        required: errMsgRequired,
+                    }}
+                />
+            </div>
         </div>
     );
 }

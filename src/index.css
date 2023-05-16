@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 
-:root {
+#root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    min-height: 100svh;
     display: flex;
     line-height: 1.5;
     font-weight: 400;
@@ -15,4 +16,5 @@
     --secondaryAccent: #3a0077;
     --textColor: #666666;
     --icon: rgb(2, 45, 151);
+    --red-light: #e3170a;
 }

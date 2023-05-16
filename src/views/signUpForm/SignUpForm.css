@@ -1,8 +1,14 @@
 .sign-up-form {
+    display: grid;
     border-radius: 10px;
     border: #23014641 solid 1px;
-    padding: 2.5rem 4rem;
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
+}
+
+.change-button {
+    padding: 0 4rem 2.5rem 4rem;
 }
 
 .sign-up-form form {
@@ -13,4 +19,45 @@
 .input-container {
     display: grid;
     gap: 1rem;
+    padding: 1.5rem 4rem 0rem 4rem;
 }
+
+.personal-info {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.profile-pictures {
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    min-height: 8rem;
+    background-color: rgb(185, 185, 185);
+    flex-direction: column;
+    /* border-bottom: 1px solid black; */
+    align-items: center;
+}
+
+.profile-picture {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+    height: 6rem;
+    width: 6rem;
+    /* border: 1px solid black; */
+    position: relative;
+    top: 50%;
+}
+
+.profile-picture svg {
+    border-radius: 50%;
+    background-color: rgb(151, 151, 151);
+}
+
+/* .profile-banner {
+    background-color: grey;
+    min-height: 8rem;
+    width: 100%;
+} */

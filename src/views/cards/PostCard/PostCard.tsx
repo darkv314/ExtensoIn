@@ -8,6 +8,7 @@ interface Props {
   author: string;
   description: string;
   image?: string;
+  page?: boolean;
   onCLickButton?: () => void;
 }
 
@@ -16,6 +17,7 @@ const PostCard: React.FC<Props> = ({
   author,
   description,
   image,
+  page = false,
   onCLickButton = () => {},
 }) => {
   return (
@@ -26,7 +28,9 @@ const PostCard: React.FC<Props> = ({
         <p className="post-author">Por {author}</p>
         <p className="post-description">{description}</p>
       </div>
-      <IconButton  label="Postular" onClick={onCLickButton} icon={<Golf />} />
+      {page ? null : (
+        <IconButton label="Postular" onClick={onCLickButton} icon={<Golf />} />
+      )}
     </div>
   );
 };

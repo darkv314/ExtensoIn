@@ -1,14 +1,21 @@
-import { FormProvider, useForm, SubmitHandler } from "react-hook-form";
+import {
+    FormProvider,
+    useForm,
+    SubmitHandler,
+    useFormContext,
+} from "react-hook-form";
 import Input from "../../components/inputs/Input";
 import "./SignUpForm.css";
 import MainButton from "../../components/buttons/MainButton";
-import { IconoirProvider, ProfileCircle } from "iconoir-react";
+// import { IconoirProvider, ProfileCircle } from "iconoir-react";
+import Avvvatars from "avvvatars-react";
 
 import {
     errMsgRequired,
     errMsgEmail,
     EMAIL_CHECK,
 } from "../../helpers/helpers";
+// import { useState } from "react";
 
 type FormValues = {
     nombre: string;
@@ -20,7 +27,12 @@ type FormValues = {
 };
 
 function SignUpForm() {
-    const methods = useForm<FormValues>();
+    const methods = useForm<FormValues>({
+        defaultValues: {
+            nombre: "",
+            apellido: "",
+        },
+    });
 
     const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data);
 
@@ -49,18 +61,27 @@ function SignUpForm() {
 }
 
 function PersonalInfo() {
+    const { watch } = useFormContext();
+    const nombre = watch("nombre");
+    const apellido = watch("apellido");
     return (
         <div className="personal-info">
             <div className="profile-pictures">
                 <div className="profile-banner"></div>
                 <div className="profile-picture">
-                    <IconoirProvider>
+                    {/* <IconoirProvider>
                         <ProfileCircle
                             width={"20 em"}
                             height={"20 em"}
                             strokeWidth={0.75}
                         />
-                    </IconoirProvider>
+                    </IconoirProvider> */}
+                    <Avvvatars
+                        border
+                        size={92}
+                        value="a"
+                        displayValue={`${nombre[0]}${apellido[0]}`}
+                    />
                 </div>
             </div>
             <div className="input-container">

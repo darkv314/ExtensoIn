@@ -1,0 +1,41 @@
+.pages__card {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1em;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+
+}
+
+.pages__card > div {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: smaller;
+  font-style: normal;
+  font-weight: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.pages__card > div:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.pages__card-content {
+  text-align: center;
+  margin-right: 0.5em;
+}
+
+.pages_card-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0.5em;
+}

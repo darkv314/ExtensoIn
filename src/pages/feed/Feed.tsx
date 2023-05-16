@@ -1,4 +1,5 @@
 import Title from "../../components/text/tittle/Title";
+import PageCard from "../../views/cards/PagesCard/PagesCard";
 import PostCard from "../../views/cards/PostCard/PostCard";
 import ProfileCard from "../../views/cards/ProfileCard/ProfileCard";
 import RecommendationWorkCard from "../../views/cards/ReccomendationWorksCard/RecommendationWorkCard";
@@ -28,6 +29,11 @@ function Feed() {
     postulate: faker.lorem.words(3),
   }));
 
+  const pages = Array.from(Array(3)).map((_, index) => ({
+    name: faker.lorem.words(3),
+    iconURL: faker.image.avatarGitHub(),
+  }));
+
   return (
     <>
       <section className="grid__feed">
@@ -39,6 +45,9 @@ function Feed() {
             imageAlt={faker.person.fullName()}
             description={faker.lorem.paragraph(3)}
           />
+          <Title text="Mis paginas" />
+
+          <PageCard pages={pages} />
         </div>
         <div className="feed_posts">
           <Title text="Publicaciones" />

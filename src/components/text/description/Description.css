@@ -1,0 +1,12 @@
+.description {
+  margin: 2em;
+}
+
+.description h2 {
+  color: var(--textColor);
+}
+
+.description p {
+  line-height: 1.5;
+  margin-bottom: 0;
+}

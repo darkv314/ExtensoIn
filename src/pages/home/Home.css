@@ -1,0 +1,25 @@
+.div__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.div__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    /* make it circle the image*/
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 2em;
+}
+
+.first__section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

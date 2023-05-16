@@ -1,9 +1,8 @@
 .title-container {
-  margin: 20px;
+  margin: 2em;
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 2em;
   font-weight: bold;
-  color: #444;
 }

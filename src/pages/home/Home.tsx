@@ -18,6 +18,32 @@ function Home() {
           <img width={400} src={banner} />
         </div>
       </section>
+      <section className="second__section">
+        <Title text="¿Cómo funciona?" />
+        <div className="second__section__content">
+          <div className="second__section__content__item">
+            <h3>1. Crea tu perfil</h3>
+            <p>
+              Crea tu perfil y destaca tus habilidades, experiencia y
+              conocimientos.
+            </p>
+          </div>
+          <div className="second__section__content__item">
+            <h3>2. Busca empleo</h3>
+            <p>
+              Explora las ofertas de empleo y aplica a las que más se ajusten a
+              tus intereses.
+            </p>
+          </div>
+          <div className="second__section__content__item">
+            <h3>3. ¡Listo!</h3>
+            <p>
+              Espera a que los empleadores se contacten contigo para una
+              entrevista.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

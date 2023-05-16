@@ -39,7 +39,6 @@
   align-items: center;
   flex-direction: column;
   width: 50%;
-  padding: 3em;
 }
 
 .second__section__content__item {
@@ -48,8 +47,9 @@
   align-items: center;
   flex-direction: column;
   width: 50%;
+  font-weight: 400;
   text-align: center;
-  padding: 3em;
+  padding: 1em;
 }
 
 .third__section {
@@ -63,7 +63,13 @@
     145deg,
     transparent,
     transparent 50%,
-    var(--secondary) 75%,
-    var(--secondaryAccent) 100%
+    var(--primary) 75%,
+    var(--primary) 100%
   );
+}
+
+.img__container{
+  /* make ir circle */
+  border-radius: 50%;
+  overflow: hidden;
 }

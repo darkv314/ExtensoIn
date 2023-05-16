@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,10 +9,11 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --primary: #FFFCEA;
-  --primaryAccent: #A5F2E7;
-  --secondary: #8983F3;
-  --secondaryAccent: #3A0077;
+  --primary: #fffcea;
+  --primaryAccent: #a5f2e7;
+  --secondary: #8983f3;
+  --secondaryAccent: #3a0077;
 
   --textColor: #666666;
+  --icon: rgb(2, 45, 151);
 }

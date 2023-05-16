@@ -2,6 +2,7 @@ import Description from "../../components/text/description/Description";
 import Title from "../../components/text/tittle/Title";
 import "./Home.css";
 import banner from "../../assets/banner-1.jpg";
+import banner2 from "../../assets/banner-2.jpg";
 import MainButton from "../../components/buttons/MainButton";
 
 function Home() {
@@ -22,6 +23,9 @@ function Home() {
         </section>
         <section className="second__section">
           <Title text="¿Cómo funciona?" />
+          <div className="img__container">
+            <img width={150} src={banner2} />
+          </div>
           <div className="second__section__content">
             <div className="second__section__content__item">
               <h3>1. Crea tu perfil</h3>

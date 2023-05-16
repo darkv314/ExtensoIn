@@ -16,8 +16,8 @@ const links = [
 function Layout() {
     const location = useLocation();
     return (
-        <main className="App">
-            <div className="layout">
+        <main className="App" style={{overflow: 'hidden'}}>
+            <div className="layout" style={{overflow: 'hidden'}}>
                 <Navbar
                     links={login.includes(location.pathname) ? [] : links}
                 />

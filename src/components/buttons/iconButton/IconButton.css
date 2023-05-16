@@ -1,4 +1,4 @@
-button {
+.icon__button {
     background: none;
     border: none;
     cursor: pointer;
@@ -8,9 +8,10 @@ button {
     padding: 0.5rem 1rem;
     transition: all 0.2s ease-in-out;
     background-color: #f6f4f4;
+    max-width: 6em;
 }
 
-button:hover {
+.icon__button:hover {
     transform: scale(1.05);
     height: auto;
     background-color: aliceblue;

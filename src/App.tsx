@@ -8,9 +8,9 @@ import Feed from "./pages/feed/Feed";
 
 function App() {
     return (
-        <Routes>
-            <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
+        <Routes >
+            <Route element={<Layout />} >
+                <Route path="/" element={<Home  />} />
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/feed" element={<Feed />} />

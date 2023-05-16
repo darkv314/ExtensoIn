@@ -1,5 +1,7 @@
 import Navbar from "../../views/navbar/NavBar";
 import "./Home.css";
+import { LargeSuitcase } from "iconoir-react";
+import { Send } from "iconoir-react";
 
 function Home() {
     const links = [

@@ -1,9 +1,15 @@
 import React, { FC } from "react";
 import logo from "../../assets/logo.png";
 import "./Navbar.css";
+import { LargeSuitcase } from "iconoir-react";
 
 type NavbarProps = {
-  links: { text: string; url: string }[];
+  links: {
+    text: string;
+    url: string;
+    icon?: React.ReactNode;
+    border?: boolean;
+  }[];
   activeLinkIndex?: number;
 };
 
@@ -21,14 +27,12 @@ const Navbar: FC<NavbarProps> = ({ links, activeLinkIndex = 0 }) => {
             <a
               href={link.url}
               style={{
-                color: index === activeLinkIndex ? "white" : "gray",
-                backgroundColor:
-                  index === activeLinkIndex ? "blue" : "transparent",
-                border: "solid 1px gray",
-                padding: "10px",
+                border: link.border ? "solid 1px var(--textColor)" : "none",
+                padding: "1em",
                 borderRadius: "5px",
               }}
             >
+              {link.icon ? link.icon : null}
               {link.text}
             </a>
           </li>

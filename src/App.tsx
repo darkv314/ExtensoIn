@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import Layout from "./views/layout/Layout";
 import SignIn from "./pages/signIn/SignIn";
 import SignUp from "./pages/signUp/SignUp";
+import Feed from "./pages/feed/Feed";
 
 function App() {
     return (
@@ -12,9 +13,8 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/feed" element={<Feed />} />
             </Route>
         </Routes>
     );
 }
-
-export default App;

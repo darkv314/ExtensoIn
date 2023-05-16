@@ -1,0 +1,21 @@
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease-in-out;
+    background-color: #f6f4f4;
+}
+
+button:hover {
+    transform: scale(1.05);
+    height: auto;
+    background-color: aliceblue;
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}

@@ -1,0 +1,42 @@
+.post-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.post-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+.post-content {
+  padding: 16px;
+}
+
+.post-title {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+
+.post-author {
+  margin: 0 0 8px 0;
+  font-weight: bold;
+  color: #0073b1;
+}
+
+.post-description {
+  margin: 0;
+  font-size: 1em;
+  /* make max 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow-y: scroll;
+  /* customize scroll */
+  scrollbar-width: thin;
+  scrollbar-color: #0073b1 #fff;
+}

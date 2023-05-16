@@ -1,0 +1,75 @@
+.div__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  padding: 3em;
+}
+
+.div__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  /* make it circle the image*/
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 2em;
+}
+
+.first__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.second__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 2px whitesmoke;
+  font-weight: bold;
+}
+
+.second__section__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.second__section__content__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  font-weight: 400;
+  text-align: center;
+  padding: 1em;
+}
+
+.third__section {
+  text-shadow: 0 0 2px whitesmoke;
+
+  display: flex;
+  flex-direction: row;
+}
+.background {
+  background: linear-gradient(
+    145deg,
+    transparent,
+    transparent 50%,
+    var(--primary) 75%,
+    var(--primary) 100%
+  );
+}
+
+.img__container{
+  /* make ir circle */
+  border-radius: 50%;
+  overflow: hidden;
+}

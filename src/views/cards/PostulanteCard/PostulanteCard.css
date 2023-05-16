@@ -1,0 +1,51 @@
+.postulanteCard {
+  width: 90%;
+  margin: 1em;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+.postulanteCard-avatar {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.postulanteCard-content {
+  padding: 10px;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.postulanteCard:hover{
+    background-color: aliceblue;
+}

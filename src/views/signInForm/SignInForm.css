@@ -1,0 +1,16 @@
+.sign-in-form {
+    border-radius: 10px;
+    border: #23014641 solid 1px;
+    padding: 2.5rem 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sign-in-form form {
+    display: grid;
+    gap: 2rem;
+}
+
+.input-container {
+    display: grid;
+    gap: 1rem;
+}

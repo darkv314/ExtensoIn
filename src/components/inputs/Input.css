@@ -1,0 +1,85 @@
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    max-width: 100%;
+}
+
+.input input {
+    font-family: inherit;
+    border-radius: 0.3rem;
+    padding: 0.75em;
+    border: 1px solid var(--secondaryAccent);
+}
+
+.input select {
+    font-family: inherit;
+    border-radius: 0.2rem;
+    padding: 0.75em;
+    border-color: var(--primary);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("../../../icons/downArrow.svg") no-repeat right center /
+        1rem;
+    background-position-x: calc(100% - 0.75rem);
+}
+
+.input input:focus {
+    outline-color: var(--primary-brilliant);
+    outline-width: 0.05rem;
+    outline-style: solid;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.input input::-webkit-outer-spin-button,
+.input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.password {
+    display: flex;
+    width: 100%;
+    border-radius: 0.3em;
+}
+
+.password input {
+    width: 100%;
+    border-radius: 0.3em 0 0 0.3em;
+}
+
+.password input[type="password"]::-ms-reveal,
+.password input[type="password"]::-ms-clear {
+    display: none;
+}
+
+.password button {
+    border-radius: 0 0.3em 0.3em 0;
+    background-color: white;
+    border: 1px solid var(--secondaryAccent);
+    padding: 0 1em;
+    display: grid;
+    place-items: center;
+    outline: none;
+}
+.password div {
+    background-color: rgb(117, 93, 48);
+}
+
+.password:focus-within {
+    outline-color: var(--primary-brilliant);
+    outline-width: 0.05rem;
+    outline-style: solid;
+}
+
+.analisis-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.error {
+    color: var(--red-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+}

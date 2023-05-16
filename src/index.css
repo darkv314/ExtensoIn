@@ -1,19 +1,18 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  --primary: #fffcea;
-  --primaryAccent: #a5f2e7;
-  --secondary: #8983f3;
-  --secondaryAccent: #3a0077;
-
-  --textColor: #666666;
-  --icon: rgb(2, 45, 151);
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    display: flex;
+    line-height: 1.5;
+    font-weight: 400;
+    --primary: #fffcea;
+    --primaryAccent: #a5f2e7;
+    --secondary: #8983f3;
+    --secondaryAccent: #3a0077;
+    --textColor: #666666;
+    --icon: rgb(2, 45, 151);
 }

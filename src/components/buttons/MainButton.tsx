@@ -1,10 +1,24 @@
+import React from "react";
 import "./MainButton.css";
 
-type MainButtonProps = {
-    txtButton: string;
-}
+type MainButton = {
+  type?: "button" | "submit" | "reset" | undefined;
+  onClick?: () => void;
+  children?: React.ReactNode;
+  rest?: any;
+};
 
-export default function MainButton({ txtButton }: MainButtonProps) {
-  return <button className="main__button">{txtButton}</button>;
-  
-}
+const MainButton = ({
+  type = "button",
+  onClick = () => {},
+  children = "Click Me",
+  ...rest
+}: MainButton) => {
+  return (
+    <button type={type} onClick={onClick} {...rest}>
+      {children}
+    </button>
+  );
+};
+
+export default MainButton;

@@ -24,7 +24,7 @@ function Home() {
         <section className="second__section">
           <Title text="¿Cómo funciona?" />
           <div className="img__container">
-            <img width={150} src={banner2} />
+            <img width={200} src={banner2} />
           </div>
           <div className="second__section__content">
             <div className="second__section__content__item">

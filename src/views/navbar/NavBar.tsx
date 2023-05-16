@@ -21,9 +21,6 @@ const Navbar: FC<NavbarProps> = ({ links, activeLinkIndex = 0 }) => {
             <a
               href={link.url}
               style={{
-                color: index === activeLinkIndex ? "white" : "gray",
-                backgroundColor:
-                  index === activeLinkIndex ? "blue" : "transparent",
                 border: "solid 1px gray",
                 padding: "10px",
                 borderRadius: "5px",

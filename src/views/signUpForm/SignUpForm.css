@@ -1,11 +1,11 @@
-.sign-in-form {
+.sign-up-form {
     border-radius: 10px;
     border: #23014641 solid 1px;
-    padding: 2.5rem 3rem;
+    padding: 2.5rem 4rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.sign-in-form form {
+.sign-up-form form {
     display: grid;
     gap: 2rem;
 }

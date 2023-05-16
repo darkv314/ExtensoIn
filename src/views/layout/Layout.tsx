@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { LargeSuitcase, Send } from "iconoir-react";
 // import "./layout.css";
 
-const login = ["/", "/registro", "/codigo", "/password"];
+const login = ["/registro", "/codigo", "/password"];
 
 const links = [
     { text: "Trabajos", url: "/works", icon: <LargeSuitcase /> },

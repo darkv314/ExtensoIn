@@ -3,9 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --primary: #FFFCEA;
+  --primaryAccent: #A5F2E7;
+  --secondary: #8983F3;
+  --secondaryAccent: #3A0077;
 }

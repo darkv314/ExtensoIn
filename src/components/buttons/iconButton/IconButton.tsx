@@ -10,7 +10,7 @@ interface ButtonProps {
 
 const IconButton: React.FC<ButtonProps> = ({ label, onClick, icon }) => {
   return (
-    <button onClick={onClick}>
+    <button className="icon__button" onClick={onClick}>
       {icon? icon : <QuestionMark />}
       {label}
     </button>

@@ -35,3 +35,9 @@ a:hover {
     color: var(--secondaryAccent);
     background-color: var(--secondary);
 }
+
+ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,5 +1,24 @@
+import React from "react";
 import "./MainButton.css";
 
-export default function MainButton(txtButton: string = "Button") {
-  return <button className="main__button">{txtButton}</button>;
-}
+type MainButton = {
+  type?: "button" | "submit" | "reset" | undefined;
+  onClick?: () => void;
+  children?: React.ReactNode;
+  rest?: any;
+};
+
+const MainButton = ({
+  type = "button",
+  onClick = () => {},
+  children = "Click Me",
+  ...rest
+}: MainButton) => {
+  return (
+    <button type={type} onClick={onClick} {...rest}>
+      {children}
+    </button>
+  );
+};
+
+export default MainButton;

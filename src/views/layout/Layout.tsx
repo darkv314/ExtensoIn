@@ -1,15 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../navbar/NavBar";
 import { useLocation } from "react-router-dom";
+import { LargeSuitcase, Send } from "iconoir-react";
 // import "./layout.css";
 
 const login = ["/", "/registro", "/codigo", "/password"];
 
 const links = [
-    { text: "Trabajos", url: "/works" },
-    { text: "Publicar", url: "/publish" },
-    { text: "Unirse", url: "/sign-in" },
-    { text: "Registrarse", url: "/log-in" },
+    { text: "Trabajos", url: "/works", icon: <LargeSuitcase /> },
+    { text: "Publicar", url: "/publish", icon: <Send /> },
+    { text: "Unirse", url: "/sign-in", border: true },
+    { text: "Registrarse", url: "/log-in", border: true },
 ];
 
 function Layout() {

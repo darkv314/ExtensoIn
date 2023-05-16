@@ -9,6 +9,7 @@ import "./SignUpForm.css";
 import MainButton from "../../components/buttons/MainButton";
 // import { IconoirProvider, ProfileCircle } from "iconoir-react";
 import Avvvatars from "avvvatars-react";
+import { faker } from "@faker-js/faker";
 
 import {
     errMsgRequired,
@@ -60,14 +61,20 @@ function SignUpForm() {
     );
 }
 
+const bannerImg = faker.image.urlPicsumPhotos();
+
 function PersonalInfo() {
     const { watch } = useFormContext();
     const nombre = watch("nombre");
     const apellido = watch("apellido");
     return (
         <div className="personal-info">
-            <div className="profile-pictures">
-                <div className="profile-banner"></div>
+            <div
+                className="profile-pictures"
+                style={{
+                    backgroundImage: `url(${bannerImg})`,
+                }}
+            >
                 <div className="profile-picture">
                     {/* <IconoirProvider>
                         <ProfileCircle
@@ -117,6 +124,15 @@ function PersonalInfo() {
                     id="contrasena"
                     label="Contraseña"
                     type="password"
+                    validations={{
+                        required: errMsgRequired,
+                    }}
+                />
+
+                <Input
+                    id="ci"
+                    label="Carnet de Identidad"
+                    type="number"
                     validations={{
                         required: errMsgRequired,
                     }}

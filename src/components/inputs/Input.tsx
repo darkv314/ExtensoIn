@@ -26,6 +26,7 @@ type InputProps = {
             message: string;
         };
     };
+    type?: string;
     value?: string;
 };
 
@@ -37,8 +38,13 @@ function Input({ id, label, type, validations }: MainInputProps) {
     return (
         <div className="input">
             <label htmlFor={id}>{label}</label>
-            {type === "text" ? (
-                <TextInput id={id} validations={validations} value="" />
+            {type !== "password" ? (
+                <TextInput
+                    id={id}
+                    validations={validations}
+                    value=""
+                    type={type}
+                />
             ) : (
                 <PasswordInput id={id} validations={validations} />
             )}
@@ -47,11 +53,11 @@ function Input({ id, label, type, validations }: MainInputProps) {
     );
 }
 
-function TextInput({ id, validations, value }: InputProps) {
+function TextInput({ id, validations, value, type }: InputProps) {
     const { register } = useFormContext();
     return (
         <input
-            type="text"
+            type={type}
             {...register(id, validations)}
             defaultValue={value}
         />

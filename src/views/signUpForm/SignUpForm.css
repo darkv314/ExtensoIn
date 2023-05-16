@@ -31,7 +31,8 @@
     border-radius: 10px 10px 0 0;
     display: flex;
     min-height: 8rem;
-    background-color: rgb(185, 185, 185);
+    background-size: cover;
+    background-position: center;
     flex-direction: column;
     /* border-bottom: 1px solid black; */
     align-items: center;

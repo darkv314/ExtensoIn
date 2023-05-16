@@ -1,0 +1,26 @@
+.card {
+    width: fit-content;
+    margin-left: 1em;
+    margin-right: 1em;
+    padding: 1em;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  .card-content {
+    text-align: center;
+  }
+  
+  .avatar {
+    margin: 10px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-name{
+    font-size: 1.5em;
+    font-weight: bold;
+  }

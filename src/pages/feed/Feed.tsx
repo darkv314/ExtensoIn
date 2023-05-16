@@ -1,4 +1,6 @@
+import Title from "../../components/text/tittle/Title";
 import PostCard from "../../views/cards/PostCard/PostCard";
+import ProfileCard from "../../views/cards/ProfileCard/ProfileCard";
 import "./Feed.css";
 import { faker } from "@faker-js/faker";
 
@@ -21,8 +23,15 @@ function Feed() {
   return (
     <>
       <section className="grid__feed">
-        <div className="feed_posts">1</div>
-        <div>
+        <div className="feed_profile">
+          <ProfileCard
+            name={faker.person.fullName()}
+            imageSrc={faker.image.avatar()}
+            imageAlt={faker.person.fullName()}
+            description={faker.lorem.paragraph(3)}
+          />
+        </div>
+        <div className="feed_posts">
           {postList.map((post, index) => {
             return (
               <PostCard

@@ -1,6 +1,6 @@
 import axios from "./axios";
 
-const postData = async (url: string, body: any, accessToken: string) => {
+const postData = async (url: string, body: any, accessToken?: string) => {
     try {
         const response = await axios.post(url, body, {
             headers: {

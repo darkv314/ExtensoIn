@@ -2,12 +2,14 @@ import { FormProvider, useForm, SubmitHandler } from "react-hook-form";
 import Input from "../../components/inputs/Input";
 import "./SignInForm.css";
 import MainButton from "../../components/buttons/MainButton";
-
 import {
     errMsgRequired,
     errMsgEmail,
     EMAIL_CHECK,
 } from "../../helpers/helpers";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import postData from "../../api/PostData";
+import { Navigate, useNavigate } from "react-router-dom";
 
 type FormValues = {
     email: string;
@@ -15,9 +17,24 @@ type FormValues = {
 };
 
 function SignInForm() {
+    const navigate = useNavigate();
+    // const {setAu}
     const methods = useForm<FormValues>();
 
-    const onSubmit: SubmitHandler<any> = (data) => console.log(data);
+    const mutation = useMutation({
+            mutationFn: (loginInfo) => {
+                return postData('api/auth/register', loginInfo)
+            }
+        })
+    
+
+    const onSubmit: SubmitHandler<any> = (data) => {
+        mutation.mutate({...data});
+        if(mutation.isSuccess) {
+            navigate('/feed')
+
+         }
+    }
 
     return (
         <div className="sign-in-form">

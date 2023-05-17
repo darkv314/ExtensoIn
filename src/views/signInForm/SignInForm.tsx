@@ -8,6 +8,7 @@ import {
     errMsgEmail,
     EMAIL_CHECK,
 } from "../../helpers/helpers";
+import { useNavigate } from "react-router-dom";
 
 type FormValues = {
     email: string;
@@ -16,8 +17,9 @@ type FormValues = {
 
 function SignInForm() {
     const methods = useForm<FormValues>();
+    const navegate = useNavigate();
 
-    const onSubmit: SubmitHandler<any> = (data) => console.log(data);
+    const onSubmit: SubmitHandler<any> = (data) => navegate("/feed");
 
     return (
         <div className="sign-in-form">

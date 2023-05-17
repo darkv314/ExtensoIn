@@ -19,6 +19,7 @@ import {
     EMAIL_CHECK,
 } from "../../helpers/helpers";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { useState } from "react";
 
 type FormValues = {
@@ -37,10 +38,11 @@ function SignUpForm() {
             apellido: "",
         },
     });
+    const navigate = useNavigate()
     const form = [<PersonalInfo key={0} />, <ProfesionalInfo key={1} />];
     const [formState, setFormState] = useState(0);
     const onSubmit: SubmitHandler<FormValues> = (data) => {
-        formState === 0 ? setFormState(1) : console.log(data);
+        formState === 0 ? setFormState(1) : navigate("/feed");
     };
 
     return (

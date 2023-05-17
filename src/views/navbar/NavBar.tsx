@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import logo from "../../assets/logo.png";
 import "./Navbar.css";
 import { LargeSuitcase } from "iconoir-react";
+import { useNavigate } from "react-router";
 
 type NavbarProps = {
   links: {
@@ -14,13 +15,14 @@ type NavbarProps = {
 };
 
 const Navbar: FC<NavbarProps> = ({ links, activeLinkIndex = 0 }) => {
+  const navigate = useNavigate();
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <a href="/" className="navbar-logo">
+        <div onClick={() => navigate("/")} className="navbar-logo">
           <img src={logo} width={70}></img>
           IN EXPERTO
-        </a>
+        </div>
       </div>
       <ul className="navbar-nav">
         {links.map((link, index) => (

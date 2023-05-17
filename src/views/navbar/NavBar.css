@@ -7,6 +7,10 @@
   min-height: 7rem;
 }
 
+.navbar-logo:hover {
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .navbar-brand {
   font-size: 2em;
   font-weight: bold;
@@ -16,7 +20,11 @@
 .navbar-logo {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 1em;
+  padding: .1em;
+
 }
 
 .navbar-nav {

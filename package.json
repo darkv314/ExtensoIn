@@ -20,7 +20,8 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-router-dom": "^6.11.1",
-    "react-scroll-parallax": "^3.4.2"
+    "react-scroll-parallax": "^3.4.2",
+    "sonner": "^0.3.5"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.1",

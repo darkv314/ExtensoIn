@@ -6,6 +6,7 @@ import ProfileCard from "../../views/cards/ProfileCard/ProfileCard";
 import RecommendationWorkCard from "../../views/cards/ReccomendationWorksCard/RecommendationWorkCard";
 import "./Feed.css";
 import { faker } from "@faker-js/faker";
+import { toast } from "sonner";
 
 function Feed() {
   //  make a list of posts size 10
@@ -63,7 +64,7 @@ function Feed() {
                 author={post.author}
                 description={post.description}
                 image={post.image}
-                onCLickButton={() => {}}
+                onCLickButton={() => {toast.success('Postulacion enviada')}}
                 key={index}
               />
             );

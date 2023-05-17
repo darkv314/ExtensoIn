@@ -17,8 +17,9 @@ const Navbar: FC<NavbarProps> = ({ links, activeLinkIndex = 0 }) => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <a href="/">
+        <a href="/" className="navbar-logo">
           <img src={logo} width={70}></img>
+          IN EXPERTO
         </a>
       </div>
       <ul className="navbar-nav">

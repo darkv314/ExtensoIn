@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 import { LargeSuitcase, Send } from "iconoir-react";
 import "./Layout.css";
 
-const login = ["/sign-in", "/sign-up"];
+const login = ["/sign-in", "/sign-up", "/feed"];
 
 const links = [
-    { text: "Trabajos", url: "/works", icon: <LargeSuitcase /> },
-    { text: "Publicar", url: "/publish", icon: <Send /> },
+    { text: "Trabajos", url: "/#works", icon: <LargeSuitcase /> },
+    { text: "Publicar", url: "/#publish", icon: <Send /> },
     { text: "Ingresar", url: "/sign-in", border: true },
     { text: "Registrarse", url: "/sign-up", border: true },
 ];

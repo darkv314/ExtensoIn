@@ -21,7 +21,7 @@ function Home() {
                         <img width={400} src={banner} />
                     </div>
                 </section>
-                <section className="second__section">
+                <section id="works" className="second__section">
                     <Title text="¿Cómo funciona?" />
                     <div className="img__container">
                         <img width={200} src={banner2} />
@@ -50,7 +50,7 @@ function Home() {
                         </div>
                     </div>
                 </section>
-                <section className="third__section">
+                <section id="publish" className="third__section">
                     <div className="div__left">
                         <Title text="Publica un trabajo" />
                         <Description

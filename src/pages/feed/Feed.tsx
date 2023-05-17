@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Title from "../../components/text/tittle/Title";
 import PageCard from "../../views/cards/PagesCard/PagesCard";
 import PostCard from "../../views/cards/PostCard/PostCard";
@@ -33,18 +34,22 @@ function Feed() {
     name: faker.lorem.words(3),
     iconURL: faker.image.avatarGitHub(),
   }));
+  const navigate = useNavigate();
 
   return (
     <>
       <section className="grid__feed">
         <div className="feed_profile">
           <Title text="Perfil" />
-          <ProfileCard
-            name={faker.person.fullName()}
-            imageSrc={faker.image.avatar()}
-            imageAlt={faker.person.fullName()}
-            description={faker.lorem.paragraph(3)}
-          />
+          <div className="profile__card_feed" onClick={() => navigate("/profile")}>
+            <ProfileCard
+              name={faker.person.fullName()}
+              imageSrc={faker.image.avatar()}
+              imageAlt={faker.person.fullName()}
+              description={faker.lorem.paragraph(3)}
+            />
+          </div>
+
           <Title text="Mis paginas" />
 
           <PageCard pages={pages} />

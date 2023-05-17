@@ -5,3 +5,8 @@
   gap: 8px;
   overflow: hidden !important;
 }
+
+.profile__card_feed:hover > div {
+  background-color: aliceblue;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

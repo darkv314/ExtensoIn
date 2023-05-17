@@ -7,9 +7,10 @@ import {
     errMsgEmail,
     EMAIL_CHECK,
 } from "../../helpers/helpers";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import postData from "../../api/PostData";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 type FormValues = {
     email: string;
@@ -18,21 +19,25 @@ type FormValues = {
 
 function SignInForm() {
     const navigate = useNavigate();
-    // const {setAu}
+    const { setAuth } = useAuth();
     const methods = useForm<FormValues>();
 
     const mutation = useMutation({
             mutationFn: (loginInfo) => {
-                return postData('api/auth/register', loginInfo)
+                return postData('api/auth/login', loginInfo)
             }
         })
     
 
-    const onSubmit: SubmitHandler<any> = (data) => {
-        mutation.mutate({...data});
+    const onSubmit: SubmitHandler<any> =  (data) => {
+         mutation.mutate({...data});
         if(mutation.isSuccess) {
+            const data = mutation.data.data;
+            setAuth({
+                authToken: data.token,
+                ...data.user
+            })
             navigate('/feed')
-
          }
     }
 

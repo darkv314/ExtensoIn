@@ -5,9 +5,11 @@ const postData = async (url: string, body: any, accessToken?: string) => {
         const response = await axios.post(url, body, {
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${accessToken}`,
+                // Authorization: `Bearer ${accessToken}`,
+                "Access-Control-Allow-Methods": "GET",
+                 "Access-Control-Allow-Origin": "*",
             },
-            withCredentials: true,
+            // withCredentials: true,
         });
         return response;
     } catch (err: any) {

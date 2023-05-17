@@ -19,6 +19,8 @@ import {
     EMAIL_CHECK,
 } from "../../helpers/helpers";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import postData from "../../api/PostData";
 // import { useState } from "react";
 
 type FormValues = {
@@ -37,10 +39,30 @@ function SignUpForm() {
             apellido: "",
         },
     });
+    const mutation = useMutation({
+        mutationFn: (registerInfo) => {
+            return postData('api/auth/register', registerInfo)
+        }
+    })
     const form = [<PersonalInfo key={0} />, <ProfesionalInfo key={1} />];
     const [formState, setFormState] = useState(0);
+
+    const submitRegister: SubmitHandler<FormValues> = (data: any) => {
+        console.log(data);
+        mutation.mutate({
+            nombre: data.nombre,
+            apellido: data.apellido,
+            descripcion: data.descripcion,
+            fechaNacimiento: data.fechaNacimiento,
+            ci: data.ci,
+            skills: data.habilidades,
+            email: data.email,
+            password: data.contrasena
+        })
+    }
+
     const onSubmit: SubmitHandler<FormValues> = (data) => {
-        formState === 0 ? setFormState(1) : console.log(data);
+        formState === 0 ? setFormState(1) : submitRegister(data);
     };
 
     return (
@@ -184,7 +206,7 @@ function ProfesionalInfo() {
             <label htmlFor="habilidades">Habilidades</label>
             <textarea
                 id="habilidades"
-                {...register("descripcion", {
+                {...register("habilidades", {
                     required: errMsgRequired,
                 })}
             ></textarea>

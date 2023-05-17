@@ -4,63 +4,67 @@ import "./SignInForm.css";
 import MainButton from "../../components/buttons/MainButton";
 
 import {
-    errMsgRequired,
-    errMsgEmail,
-    EMAIL_CHECK,
+  errMsgRequired,
+  errMsgEmail,
+  EMAIL_CHECK,
 } from "../../helpers/helpers";
 import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 type FormValues = {
-    email: string;
-    password: string;
+  email: string;
+  password: string;
 };
 
 function SignInForm() {
-    const methods = useForm<FormValues>();
-    const navegate = useNavigate();
+  const methods = useForm<FormValues>();
+  const navegate = useNavigate();
 
-    const onSubmit: SubmitHandler<any> = (data) => navegate("/feed");
+  const onSubmit: SubmitHandler<any> = (data) => {
+    navegate("/feed");
+    toast.success('Ingreso con exito')
+  };
 
-    return (
-        <div className="sign-in-form">
-            <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit(onSubmit)}>
-                    <h1>Bienvenid@</h1>
-                    <div className="sign-in-container">
-                        <Input
-                            id="email"
-                            label="Email"
-                            type="text"
-                            validations={{
-                                required: errMsgRequired,
-                                pattern: {
-                                    value: EMAIL_CHECK,
-                                    message: errMsgEmail,
-                                },
-                            }}
-                        />
-                        <Input
-                            id="password"
-                            label="Password"
-                            type="password"
-                            validations={{
-                                required: errMsgRequired,
-                            }}
-                        />
-                    </div>
+  return (
+    <div className="sign-in-form">
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <h1>Bienvenid@</h1>
+          <div className="sign-in-container">
+            <Input
+              id="email"
+              label="Email"
+              type="text"
+              validations={{
+                required: errMsgRequired,
+                pattern: {
+                  value: EMAIL_CHECK,
+                  message: errMsgEmail,
+                },
+              }}
+            />
+            <Input
+              id="password"
+              label="Password"
+              type="password"
+              validations={{
+                required: errMsgRequired,
+              }}
+            />
+          </div>
 
-                    <MainButton
-                        type="submit"
-                        backgroundColor={"blue"}
-                        color="white"
-                        border="none"
-                    >
-                        Iniciar sesión
-                    </MainButton>
-                </form>
-            </FormProvider>
-        </div>
-    );
+          <MainButton
+            type="submit"
+            backgroundColor={"blue"}
+            color="white"
+            border="none"
+          >
+            Iniciar sesión
+          </MainButton>
+        </form>
+      </FormProvider>
+    </div>
+  );
 }
 
 export default SignInForm;

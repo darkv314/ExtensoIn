@@ -3,6 +3,7 @@ import "./RecommendationWorkCard.css";
 import IconButton from "../../../components/buttons/iconButton/IconButton";
 import { Golf } from "iconoir-react";
 import Title from "../../../components/text/tittle/Title";
+import { toast } from "sonner";
 
 interface Work {
   name: string;
@@ -37,7 +38,7 @@ const RecommendationWorkCard: React.FC<RecommendationWorkCardProps> = ({
                 </p>
               </div>
 
-              <IconButton label="Postular" onClick={() => {}} icon={<Golf />} />
+              <IconButton label="Postular" onClick={() => {toast.success('Postulacion enviada')}} icon={<Golf />} />
             </div>
           </div>
         ))}

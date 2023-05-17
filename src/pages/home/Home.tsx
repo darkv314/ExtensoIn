@@ -4,8 +4,10 @@ import "./Home.css";
 import banner from "../../assets/banner-1.jpg";
 import banner2 from "../../assets/banner-2.jpg";
 import MainButton from "../../components/buttons/MainButton";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+    const navigate = useNavigate();
     return (
         <>
             <div className="background">
@@ -59,7 +61,7 @@ function Home() {
                         />
                     </div>
                     <div className="div__right">
-                        <MainButton>Publicar Trabajo</MainButton>
+                        <MainButton color="aliceBlue" onClick={()=>navigate("/sign-in")} width="15em" backgroundColor="var(--secondary)">Publicar Trabajo</MainButton>
                     </div>
                 </section>
             </div>

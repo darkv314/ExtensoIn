@@ -21,6 +21,8 @@ import {
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import postData from "../../api/PostData";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 // import { useState } from "react";
 
 type FormValues = {
@@ -33,6 +35,9 @@ type FormValues = {
 };
 
 function SignUpForm() {
+    //@ts-ignore
+    const {setAuth} = useAuth();
+    const navigate = useNavigate();
     const methods = useForm<FormValues>({
         defaultValues: {
             nombre: "",
@@ -40,9 +45,16 @@ function SignUpForm() {
         },
     });
     const mutation = useMutation({
-        mutationFn: (registerInfo) => {
+        mutationFn: (registerInfo: any) => {
             return postData('api/auth/register', registerInfo)
-        }
+        },
+        onSuccess(data) {
+            setAuth({
+                authToken: data.data.token,
+                    ...data.data.user
+            })
+            navigate('/feed')
+        },
     })
     const form = [<PersonalInfo key={0} />, <ProfesionalInfo key={1} />];
     const [formState, setFormState] = useState(0);

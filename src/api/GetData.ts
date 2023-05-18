@@ -1,9 +1,9 @@
 import axios from "./axios";
-
-const getData = async (url: string, accessToken: string) => {
+//@ts-ignore
+const getData = async (url: string, accessToken?: string) => {
     try {
         const response = await axios.get(url, {
-            headers: { Authorization: `Bearer ${accessToken}` },
+            // headers: { Authorization: `Bearer ${accessToken}` },
         });
         return response;
     } catch (err: any) {

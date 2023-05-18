@@ -1,17 +1,19 @@
 import Avvvatars from "avvvatars-react";
 import Title from "../../components/text/tittle/Title";
-import PageCard from "../../views/cards/PagesCard/PagesCard";
+//import PageCard from "../../views/cards/PagesCard/PagesCard";
 import PostCard from "../../views/cards/PostCard/PostCard";
-import ProfileCard from "../../views/cards/ProfileCard/ProfileCard";
+//import ProfileCard from "../../views/cards/ProfileCard/ProfileCard";
 import RecommendationWorkCard from "../../views/cards/ReccomendationWorksCard/RecommendationWorkCard";
 import "./Profile.css";
-import { faker, tr } from "@faker-js/faker";
+//import { faker, tr } from "@faker-js/faker";
+import { faker } from "@faker-js/faker";
 import Description from "../../components/text/description/Description";
 
 function Profile() {
   const bannerImg = faker.image.urlPicsumPhotos();
   const nombre = faker.person.firstName();
   const apellido = faker.person.lastName();
+  //@ts-ignore
   const postList = Array.from(Array(10)).map((_, index) => ({
     title: faker.lorem.words(3),
     author: faker.person.fullName(),
@@ -19,6 +21,7 @@ function Profile() {
     id: faker.database.mongodbObjectId(),
     image: faker.image.urlPicsumPhotos(),
   }));
+  //@ts-ignore
   const works = Array.from(Array(3)).map((_, index) => ({
     name: faker.lorem.words(3),
     description: faker.lorem.paragraph(3),

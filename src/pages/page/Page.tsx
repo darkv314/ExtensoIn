@@ -1,9 +1,9 @@
 import Title from "../../components/text/tittle/Title";
-import PageCard from "../../views/cards/PagesCard/PagesCard";
+//import PageCard from "../../views/cards/PagesCard/PagesCard";
 import PostCard from "../../views/cards/PostCard/PostCard";
 import PostulanteCard from "../../views/cards/PostulanteCard/PostulanteCard";
 import ProfileCard from "../../views/cards/ProfileCard/ProfileCard";
-import RecommendationWorkCard from "../../views/cards/ReccomendationWorksCard/RecommendationWorkCard";
+//import RecommendationWorkCard from "../../views/cards/ReccomendationWorksCard/RecommendationWorkCard";
 import "./Page.css";
 import { faker } from "@faker-js/faker";
 
@@ -15,6 +15,7 @@ function Feed() {
     description: string;
     id: string;
     image: string;
+    //@ts-ignore
   }[] = Array.from(Array(10)).map((_, index) => ({
     title: faker.lorem.words(3),
     author: faker.person.fullName(),
@@ -22,19 +23,19 @@ function Feed() {
     id: faker.database.mongodbObjectId(),
     image: faker.image.urlPicsumPhotos(),
   }));
-
+//@ts-ignore
   const workList = Array.from(Array(3)).map((_, index) => ({
     name: faker.lorem.words(3),
     description: faker.lorem.paragraph(3),
     imageURL: faker.image.urlPicsumPhotos(),
     postulate: faker.lorem.words(3),
   }));
-
+//@ts-ignore
   const pages = Array.from(Array(3)).map((_, index) => ({
     name: faker.lorem.words(3),
     iconURL: faker.image.avatarGitHub(),
   }));
-
+//@ts-ignore
   const postulante = Array.from(Array(4)).map((_, index) => ({
     urlImage: faker.image.avatar(),
     name: faker.person.fullName(),

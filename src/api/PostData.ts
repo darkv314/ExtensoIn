@@ -1,5 +1,5 @@
 import axios from "./axios";
-
+//@ts-ignore
 const postData = async (url: string, body: any, accessToken?: string) => {
     try {
         const response = await axios.post(url, body, {

@@ -19,26 +19,27 @@ type FormValues = {
 
 function SignInForm() {
     const navigate = useNavigate();
+    //@ts-ignore
     const { setAuth } = useAuth();
     const methods = useForm<FormValues>();
 
     const mutation = useMutation({
             mutationFn: (loginInfo) => {
                 return postData('api/auth/login', loginInfo)
+            },
+            onSuccess: (data) => {
+                console.log(data)
+                setAuth({
+                    authToken: data.data.token,
+                    ...data.data.user
+                })
+                navigate('/feed')
             }
         })
     
 
     const onSubmit: SubmitHandler<any> =  (data) => {
          mutation.mutate({...data});
-        if(mutation.isSuccess) {
-            const data = mutation.data.data;
-            setAuth({
-                authToken: data.token,
-                ...data.user
-            })
-            navigate('/feed')
-         }
     }
 
     return (

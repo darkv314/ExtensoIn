@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import logo from "../../assets/logo.png";
 import "./Navbar.css";
-import { LargeSuitcase } from "iconoir-react";
+//import { LargeSuitcase } from "iconoir-react";
 
 type NavbarProps = {
   links: {
@@ -12,7 +12,7 @@ type NavbarProps = {
   }[];
   activeLinkIndex?: number;
 };
-
+//@ts-ignore
 const Navbar: FC<NavbarProps> = ({ links, activeLinkIndex = 0 }) => {
   return (
     <nav className="navbar">

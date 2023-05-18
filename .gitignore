@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 package-lock.json
+
+#ICP
+declarations/
+dfx.webpack.config.js
+canister_ids.json
+dfx.json
+.dfx/
